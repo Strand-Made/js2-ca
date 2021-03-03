@@ -1,0 +1,30 @@
+.collection {
+  display: flex;
+  flex-wrap: wrap;
+}
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #86bbbd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  width: 25rem;
+  height: fit-content;
+}
+.filter-collection {
+  width: 25rem;
+}
+.fa-heart:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clear-button:focus,
+.clear-button:hover {
+  background: chartreuse !important;
+}
