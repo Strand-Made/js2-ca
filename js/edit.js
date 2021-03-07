@@ -1,8 +1,8 @@
 import topNav from "./navbar/navbar.js";
 import { createMessage } from "./utilis/messages/message.js";
 import { baseUrl } from "./data/api.js";
-import { getToken } from "./data/storage.js";
-
+import { getToken, getUsername } from "./data/storage.js";
+// create nav
 topNav();
 
 const messageContainer = document.querySelector(".message-container");
@@ -10,6 +10,11 @@ const form = document.querySelector(".form-add-articles");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const summary = document.querySelector("#summary");
+
+const username = getUsername();
+if (!username) {
+  location.href = "/";
+}
 
 form.addEventListener("submit", submitArticle);
 
@@ -33,15 +38,15 @@ export function submitArticle(event) {
   addArticle(titleValue, authorValue, summaryValue);
 }
 
-async function addArticle(title, author, summary, dateCreated) {
+async function addArticle(title, author, summary) {
   const url = baseUrl + "/articles";
+  const token = getToken();
+  // create article data
   const data = JSON.stringify({
     title: title,
     author: author,
     summary: summary,
   });
-
-  const token = getToken();
 
   const options = {
     method: "POST",
@@ -61,9 +66,13 @@ async function addArticle(title, author, summary, dateCreated) {
         messageContainer,
         "success",
         "Success!",
-        "Your article has been created!"
+        "Your article has been created! Window will refresh shortly"
       );
       form.reset();
+      window.scrollTo(0, 0);
+      window.setTimeout(function () {
+        location.reload();
+      }, 2500);
     }
 
     if (result.error) {
@@ -74,21 +83,19 @@ async function addArticle(title, author, summary, dateCreated) {
   }
 }
 
-// Get of articles to edit
+// Get list of articles to edit
 (async function () {
   const response = await fetch(baseUrl + "/articles");
   const result = await response.json();
-  console.log(result);
   const articleList = document.querySelector(".collection");
 
   result.forEach((article) => {
     articleList.innerHTML += `
-    <li class="collection-item">
-      <a href="editArticle.html?id=${article.id}" class="edit-article">
+    <li class="box collection-item is-flex is-flex-direction-column is-justify-content-space-between ">
         <h4 class="is-size-4">${article.title}</h4>
         <p class="is-italic mb-2">${article.author}<p>
         <p>${article.summary}</p>
-      </a>    
+        <a class="button is-info mt-1 is-align-self-flex-end edit-button" href="editArticle.html?id=${article.id}">Edit</a>
     </li>`;
   });
 })();

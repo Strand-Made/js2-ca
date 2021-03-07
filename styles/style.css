@@ -3,9 +3,6 @@
   flex-wrap: wrap;
 }
 .collection-item {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #86bbbd;
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem;
@@ -27,4 +24,25 @@
 .clear-button:focus,
 .clear-button:hover {
   background: chartreuse !important;
+}
+
+.active {
+  background: hsl(204, 71%, 39%);
+  color: white;
+}
+
+.form-edit-articles {
+  display: none;
+}
+
+.form-add-articles {
+  width: 70%;
+}
+.edit-button {
+  display: block;
+  width: 5rem;
+}
+
+.navbar-item {
+  text-align: center;
 }

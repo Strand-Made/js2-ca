@@ -14,13 +14,15 @@ export default function createHtml(content) {
       heartClass = "fas";
     }
 
-    listContainer.innerHTML += `<li class="collection-item">
+    listContainer.innerHTML += `<li class="box collection-item is-flex is-flex-direction-row is-justify-content-space-between">
                                             <div>
-                                                <h4 class="is-size-4">${item.title}</h4>
+                                                <h4 class="is-size-4">${item.title}</h4> 
                                                 <p class="is-italic mb-2">${item.author}<p>
                                                 <p>${item.summary}</p>
                                             </div>
+                                            <div>
                                             <span class="icon"><i class="${heartClass} fa-heart" data-author="${item.author}" data-summary="${item.summary}" data-id="${item.id}" data-title="${item.title}"></i></span>
+                                            </div>
                                             
                                         </li>`;
   });

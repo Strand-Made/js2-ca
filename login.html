@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JavaScript 2 Course Assignment" />
+    <title>JS2 CA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar is-dark"
+      role="navigation"
+      aria-label="main navigation"
+    ></nav>
+    <section class="section">
+      <div class="container">
+        <h1 class="is-size-1 has-text-centered">Login</h1>
+        <div class="columns is-flex is-justify-content-center">
+          <div class="column is-half">
+            <div class="message-container"></div>
+
+            <form class="login-form">
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input
+                    class="input username"
+                    type="text"
+                    placeholder="Username"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input
+                    class="input password"
+                    type="password"
+                    placeholder="Password"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button type="submit" class="button is-success">Login</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/login.js" type="module"></script>
+  </body>
+</html>
