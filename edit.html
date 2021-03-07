@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JavaScript 2 Course Assignment" />
+    <title>Edit | JS2 CA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar is-dark"
+      role="navigation"
+      aria-label="main navigation"
+    ></nav>
+    <section class="section">
+      <div class="container">
+        <div class="column">
+          <h1 class="is-size-1">Add Article</h1>
+          <div class="message-container"></div>
+          <form class="form-add-articles">
+            <div class="field">
+              <label for="title" class="label">Title</label>
+              <div class="control">
+                <input id="title" class="input" type="text" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="author" class="label">Author</label>
+              <div class="control">
+                <input id="author" class="input" type="text" />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="summary" class="label">Summary * </label>
+                <textarea id="summary" class="textarea is-medium"></textarea>
+                <span class="is-size-7 has-text-grey-light"
+                  >*must be more than 10 characters</span
+                >
+              </div>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button type="submit" class="button is-success is-fullwidth">
+                  Add
+                </button>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="section edit-articles">
+      <div class="container">
+        <ul class="collection"></ul>
+      </div>
+    </section>
+
+    <script src="./js/edit.js" type="module"></script>
+  </body>
+</html>
